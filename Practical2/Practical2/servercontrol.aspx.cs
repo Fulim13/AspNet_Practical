@@ -11,7 +11,10 @@ namespace Practical2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack) // Check if the page is reloaded (Only not reloaded will run this line)
+            {
+                Response.Write("Page is posted back");
+            }
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -28,6 +31,8 @@ namespace Practical2
             + ddlProg.SelectedItem.Value + " programme. </br>"
             + "You have selected : </br>"
             + msg + " as your area of interest";
+
+ 
         }
     }
 }
