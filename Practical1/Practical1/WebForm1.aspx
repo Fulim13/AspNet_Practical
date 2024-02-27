@@ -5,6 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <%-- External CSS --%>
+    <link href="StyleSheet1.css" rel="stylesheet" />
+    <%-- Internal CSS --%>
     <style type="text/css">
         .auto-style1 {
             width: 45px;
@@ -16,6 +19,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <%-- Inline CSS --%>
+        <p style="color: darkred; font-size: large;">
+            Inline CSS
+        </p>
         <div>
             Server Control Object<br />
             <asp:Button ID="Button1" runat="server" Text="Button" />
@@ -43,7 +50,7 @@
                     <td class="auto-style1">&nbsp;</td>
                     <td class="auto-style2">&nbsp;</td>
                     <td>
-                        <asp:Button ID="btnSubmit" runat="server" Text="Submit" />
+                        <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Submit" />
                     </td>
                 </tr>
             </table>
