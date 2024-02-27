@@ -43,4 +43,5 @@
             <td>&nbsp;</td>
         </tr>
     </table>
+    <asp:Label ID="lblSelect" runat="server" Text="[lblSelect]"></asp:Label>
 </asp:Content>

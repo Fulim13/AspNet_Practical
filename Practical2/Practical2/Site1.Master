@@ -19,10 +19,16 @@
             <table style="width: 100%;">
                 <tr>
                     <td class="auto-style1">&nbsp;</td>
-                    <td>Headers</td>
+                    <td>Headers<br />
+                        <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+                        </asp:SiteMapPath>
+                    </td>
                 </tr>
                 <tr>
-                    <td class="auto-style1">Menu</td>
+                    <td class="auto-style1">Menu<asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1">
+                        </asp:TreeView>
+                        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                    </td>
                     <td>
                         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                             <p>
