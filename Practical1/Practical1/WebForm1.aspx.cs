@@ -11,7 +11,12 @@ namespace Practical1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            btnSubmit.Focus();
+        }
 
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            lblMsg.Text = "Hello " + txtName.Text + "!";
         }
     }
 }
