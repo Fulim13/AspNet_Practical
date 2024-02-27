@@ -1,0 +1,42 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Practical2.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 201px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table style="width: 100%;">
+                <tr>
+                    <td class="auto-style1">&nbsp;</td>
+                    <td>Headers</td>
+                </tr>
+                <tr>
+                    <td class="auto-style1">Menu</td>
+                    <td>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            <p>
+                                DO NOT PUT ANY DESIGN HERE</p>
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style1">&nbsp;</td>
+                    <td>Footer</td>
+                </tr>
+            </table>
+        </div>
+    </form>
+
+</body>
+</html>
