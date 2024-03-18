@@ -1,0 +1,55 @@
+SQL Injection - code injection technique - attack security vulnerability  (solved by using parameterized query)
+
+"Select * from Products Where ProductId='" + strProdIDSearch + "'"
+Select * from Products Where ProductId='P005' or '1'='1'
+Input P005' or '1'='1 to hijack the data
+
+Paratemized will (Bracket the value)
+ProductID  = (P005' or '1'='1)
+
+Step 1:
+using System.Data.SqlClient;
+using System.Configuration;
+
+Step 2:
+Connect -
+Establish the connection to database using the connection string in web.config
+
+connection string in web.config - generated using data bound control 
+(assign data source)
+
+Code:
+ SqlConnection conn;
+ string strCon = ConfigurationManager.ConnectionStrings["ConnectionStringA"].ConnectionString;
+
+ conn = new SqlConnection(strCon);
+ conn.Open();
+
+
+Step 3:
+ sqlCommand - 3 ways to execute the command (executereader)
+
+(i) Execute reader - return > 1 value
+
+Select * from Products  
+Select * from Products where ProductID=@PID;
+
+
+(ii) Execute Scalar - return only 1 value
+Select ProductName from Products where ProductID=@PID;
+Select COUNT(*) from Products;
+
+
+(iii) Execute Non Query 
+Insert, Update or Delete Statement
+Insert into Products(ProductID,ProductName,unitPrice,quantity) values('P005','Speaker',100,550);
+Update Products set unitPrice=200 where ProductID='P005';
+Delete from Products where ProductID='P005'
+
+
+
+
+
+
+
+ 

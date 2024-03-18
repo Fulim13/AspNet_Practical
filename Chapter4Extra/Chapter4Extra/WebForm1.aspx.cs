@@ -30,8 +30,14 @@ namespace Chapter4Extra
             // 2. Create a command object and execute the SQL statement
             string strProductSearch = txtProductID.Text;
 
-            string strRetrieve = "SELECT * FROM Products WHERE ProductId = '" + strProductSearch +"'";
+            // String concatenation leads to SQL injection
+            // strRetrieve = "SELECT * FROM Products WHERE ProductId = '" + strProductSearch +"'";
+
+            // Use parameterized query to prevent SQL injection
+            string strRetrieve = "SELECT * FROM Products WHERE ProductId = @ProductID";
+
             SqlCommand cmd = new SqlCommand(strRetrieve, conn);
+            cmd.Parameters.AddWithValue("@ProductID", strProductSearch);
 
             // 3. Select method used - execute reader
             SqlDataReader readerProduct = cmd.ExecuteReader();
