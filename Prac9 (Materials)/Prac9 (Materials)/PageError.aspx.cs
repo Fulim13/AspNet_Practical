@@ -14,6 +14,12 @@ namespace WebApplication1
 
         }
 
+        void Page_Error()
+        {
+            Response.Write("Exception: " + Server.GetLastError().Message);
+            Server.ClearError();
+        }
+
         protected void EqualButton_Click(object sender, ImageClickEventArgs e)
         {
 

@@ -18,12 +18,26 @@ namespace WebApplication1
             lblMessage.Text = "";
             Label1.Text = "?";
             double dblAns = 0.0;
-
-            double dblNo1 = Convert.ToDouble(TextBox1.Text);
-            double dblNo2 = Convert.ToDouble(TextBox2.Text);
-
-            dblAns = Divide(dblNo1, dblNo2);
-            Label1.Text = dblAns.ToString();
+            try
+            {
+                double dblNo1 = Convert.ToDouble(TextBox1.Text);               
+                try
+                {
+                    double dblNo2 = Convert.ToDouble(TextBox2.Text);
+                    dblAns = Divide(dblNo1, dblNo2);
+                    Label1.Text = dblAns.ToString();
+                }
+                catch (Exception ex)
+                {
+                    lblMessage.Text = "Textbox2 input must be numeric! <br/> " + "Exception" + ex.Message;
+                }
+               
+            }
+            catch (Exception ex)
+            {
+                lblMessage.Text = "Textbox1 input must be numeric! <br/> " + "Exception" + ex.Message;
+            }
+            
 
         }
 
